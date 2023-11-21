@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 70px 150px ;
+    max-width: 250px;
+    gap: 20px; 
+    background-color: white;
+    border-radius: 7px;
+    padding: 50px;
+    box-shadow: 2px 1px 1px 1px rgb(224, 222, 222);
+}
+
+.title{
+    font-size: 36px;
+    align-self: center;
+    color: #505ab4;
+    font-weight: bold;
+}
+
+.form{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 24px;
+}
+.inputs, .buttons{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;   
+    
+}
+
+
+.register{
+    background: #8a94f0;
+}
+.signIn{
+    background: #505ab4;
+}
+
+input, button{
+    padding: 7px;
+    border-radius: 5px;
+    
+}
+button{
+    cursor: pointer;
+    border: none;
+}
+input{
+    border: solid 2px #8a94f0;
+}
