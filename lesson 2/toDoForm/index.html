@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn Form</title>
+</head>
+
+<body>
+    <div class="toDoForm">
+        <h1>ToDo Form</h1>
+        <form class="form">
+            <span class="formSpan">Текст заметки <input class="formText" placeholder="Введите текст" /></span>
+
+
+            <span class="formSpan">Статус
+                <select class="formSelect">
+                    <option value="Выполнено">Выполнено</option>
+                    <option value="Не выполнено">Не выполнено</option>
+                </select>
+            </span>
+
+            <button class="formButton">Создать</button>
+        </form>
+        <div class="toDoCard">
+
+            <span class="toDoSpan">Показать задачи </span>
+            <input name="radioAction" type="radio" checked class="radioBox radioShow" />
+
+            <span class="toDoSpan">Спрятать задачи </span>
+            <input name="radioAction" type="radio" class="radioBox radioHidden" />
+
+            <div class="toDos">
+                <div class="toDo" tabindex="1" data-tooltip="Дополнительная информация">
+                    <input type="checkbox" class="toDoCheckbox" />
+                    <span class="toDoSpan">Текст заметки</span>
+                    <button class="toDoButton" data-tooltip="Внести изменения">Редактировать</button>
+                    <button class="toDoButton" data-tooltip="Удалить безвозвратно">Удалить</button>
+                    <hr />
+                </div>
+
+                <div class="toDo" tabindex="1" data-tooltip="Дополнительная информация">
+                    <input type="checkbox" class="toDoCheckbox" />
+                    <span class="toDoSpan">Текст заметки</span>
+                    <button class="toDoButton" data-tooltip="Внести изменения">Редактировать</button>
+                    <button class="toDoButton" data-tooltip="Удалить безвозвратно">Удалить</button>
+                    <hr />
+                </div>
+
+                <div class="toDo" tabindex="1" data-tooltip="Дополнительная информация">
+                    <input type="checkbox" class="toDoCheckbox" />
+                    <span class="toDoSpan">Текст заметки</span>
+                    <button class="toDoButton" data-tooltip="Внести изменения">Редактировать</button>
+                    <button class="toDoButton" data-tooltip="Удалить безвозвратно">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
