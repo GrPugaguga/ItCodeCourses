@@ -1,0 +1,117 @@
+body{
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 500;
+}
+.radioShow:checked + .toDos{
+    max-height: 1000px;
+
+}
+.radioHidden:checked + .toDos{
+    max-height: 0;
+    overflow: hidden;
+}
+.toDoCheckbox:checked + .toDoSpan{
+    text-decoration: line-through;
+}
+
+.toDoForm{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 15vh auto;
+    gap: 20px; 
+    width: 500px;
+    background-color: rgb(248, 243, 243);
+    border-radius: 7px;
+    padding: 50px;
+    box-shadow: 2px 1px 1px 1px rgb(224, 222, 222);
+}
+.form{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px;
+}
+.formSpan{
+    align-items: end;
+    border-radius: 12px;
+    font-weight: 400;
+    display: grid;
+    white-space: nowrap;
+    grid-template-columns: 200px 1fr;
+}
+.formText, .formSelect{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    padding:  7px 14px;
+    border-radius: 7px;
+    border: solid 2px #8B54FF;
+    color: #696969;
+}
+.formSelect{
+cursor: pointer;
+appearance: none;
+}
+
+
+.formButton{
+    margin-top: 20px;
+}
+
+
+.toDos{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;   
+
+}
+.toDoSpan{
+    white-space: nowrap;
+}
+
+button{
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    padding:  7px 14px;
+    border-radius: 7px;
+    background: #8B54FF;
+    color: white;
+    border: none;
+}
+.toDo{
+    display: grid;
+    grid-template-columns: [start] auto 1fr auto auto [end];
+    gap: 10px;
+    align-items: baseline;
+    justify-content: center;
+}
+hr{
+    size: 1px;
+    width: 90%;
+    color: #8a54ff65;
+    grid-column: start/end;
+}
+.toDoButton{
+    position: relative;  
+    margin-right: 7px; 
+}
+.toDoButton::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 14px;
+    color: #696969;
+    transition: all 0.5s;
+    transition-delay: 0.3s;
+    opacity: 0;
+}
+.toDoButton:hover::after{
+    opacity: 1;
+}
