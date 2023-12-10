@@ -101,10 +101,10 @@ const showMessage = () => {
 
 interface ITodoItem {
     status: boolean,
-    name: any,
+    name: string,
     reName: string,
     isEditing: boolean,
-    priority: any
+    priority: boolean,
 }
 interface IToDoFilterItem {
     method: string,
