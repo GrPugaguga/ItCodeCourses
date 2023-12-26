@@ -1,0 +1,10 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 80vw;
+  overflow-x: hidden;
+  font-family: Rubik latin, Rubik latin-ext, Rubik cryllic, Noto Sans JP, Noto Sans SC, Noto Sans KR, Noto Sans EL, Helvetica, Arial, sans-serif;
+  background-image: linear-gradient(159deg, #fafafa, #eee);
+}
+
