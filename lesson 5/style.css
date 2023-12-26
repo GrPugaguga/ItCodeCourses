@@ -1,0 +1,126 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+    font-weight: 700;
+    font-family:'Times New Roman', Times, serif;
+}
+span{
+    font-weight: bold;
+}
+img{
+    border-radius: 7px;
+    grid-column: startImg/end;
+    grid-row: 1/6;
+}
+hr{
+    margin-top: 30px;
+    size: 1px;
+    width: 90%;
+    color: #8a54ff33;
+    grid-column: start/end;
+}
+h1{
+    margin-top: 200px;
+    margin: 0px;
+    font-size: 36px;
+}
+select{
+    height: 30px;
+    width: 120px;
+    border-radius: 7px;
+    border: none;
+    margin-right: 60px;
+    box-shadow: 2px 1px 1px 1px rgb(224, 222, 222);
+    cursor: pointer;
+    appearance: none;
+    font-size: 14px;
+    padding: 7px;
+    align-self: center;
+}
+
+select:focus{
+    outline:none
+}
+
+button{
+    align-items: center;
+    box-shadow: 2px 1px 1px 1px rgb(224, 222, 222);
+    background-color: rgb(248, 243, 243);
+    padding: 15px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.buttonContainer :hover,.pageBtnContainer  :hover{
+    background-color: rgb(232, 233, 241);
+}
+
+
+.container{
+    background-color: rgb(248, 243, 243);
+    border-radius: 7px;
+    padding: 15px;
+    margin: 20px 80px ;
+    width: auto;
+    box-shadow: 2px 1px 1px 1px rgb(224, 222, 222);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    overflow: hidden;
+}
+
+
+.buttonContainer{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(6,  auto);
+    gap: 15px;
+    overflow-x: scroll;
+    margin-top: 30px;
+}
+
+.cardsContainer{
+    padding: 40px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-weight: 500;
+}
+
+.pageBtnContainer{
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    font-size: 18px;
+}
+.pageBtnContainer button{
+    font-size: 14px;
+    padding: 7px;
+    max-width: 150px;
+}
+
+.cardDiv{
+    margin-top: 30px;
+    margin-right: 10px;
+    display: grid;
+    grid-template-columns: [start] auto 1fr [end];
+    gap: 3px 7px;
+}
+
+
+
+.cardWImg{
+    display: grid;
+    grid-template-columns: [start] auto [info] 1fr [startImg] 150px [end];
+}
+
+.cardWImg span{
+    grid-column: start/info;
+}
