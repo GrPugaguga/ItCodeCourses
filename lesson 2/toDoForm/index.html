@@ -12,17 +12,16 @@
     <div class="toDoForm">
         <h1>ToDo Form</h1>
         <form class="form">
-            <span class="formSpan">Текст заметки <input class="formText" placeholder="Введите текст" /></span>
-
-
-            <span class="formSpan">Статус
+            <span class="formSpan">Текст заметки: 
+                <input v-model="creatingToDo" class="formText" placeholder="Введите текст" />
+            </span>
+            <span class="formSpan">Приоритет:
                 <select class="formSelect">
                     <option value="Выполнено">Выполнено</option>
                     <option value="Не выполнено">Не выполнено</option>
                 </select>
             </span>
-
-            <button class="formButton">Создать</button>
+            <button class="formButton" @click.prevent="handleSendToDo(creatingToDo)">Создать</button>
         </form>
         <div class="toDoCard">
 
@@ -32,28 +31,23 @@
             <span class="toDoSpan">Спрятать задачи </span>
             <input name="radioAction" type="radio" class="radioBox radioHidden" />
 
-            <div class="toDos">
-                <div class="toDo" tabindex="1" data-tooltip="Дополнительная информация">
-                    <input type="checkbox" class="toDoCheckbox" />
-                    <span class="toDoSpan">Текст заметки</span>
-                    <button class="toDoButton" data-tooltip="Внести изменения">Редактировать</button>
-                    <button class="toDoButton" data-tooltip="Удалить безвозвратно">Удалить</button>
+            <div class="toDos" v-for="todoItem, i in todoList" :key="i">
+                <div class="toDo" 
+                tabindex="1" 
+                data-tooltip="Дополнительная информация">
+                    <input type="checkbox" class="toDoCheckbox" 
+                    v-model="todoItem.status" @click="console.log(todoItem.status)"/>
+                    <span class="toDoSpan" v-if="!todoItem.isEditing" v-bind:class="{ toDoSpanCompl: todoItem.status }">{{todoItem.name}}</span>
+                    <input class="toDoSpan formText" v-else type="text" v-model="todoItem.reName" />
+                    <div v-if="!todoItem.isEditing" class="toDoButtons">
+                        <button class="toDoButton" @click.prevent="handleEditToDo(todoItem)">Редактировать</button>
+                        <button class="toDoButton" @click.prevent="handleDeleteToDo(todoItem)">Удалить</button>
+                    </div>
+                    <div v-else class="toDoButtons">
+                        <button class="toDoButton" @click.prevent="handleSaveEdit(todoItem)">Сохранить</button>
+                        <button class="toDoButton" @click.prevent="handleCancelEdit(todoItem)">Отменить</button>
+                    </div>
                     <hr />
-                </div>
-
-                <div class="toDo" tabindex="1" data-tooltip="Дополнительная информация">
-                    <input type="checkbox" class="toDoCheckbox" />
-                    <span class="toDoSpan">Текст заметки</span>
-                    <button class="toDoButton" data-tooltip="Внести изменения">Редактировать</button>
-                    <button class="toDoButton" data-tooltip="Удалить безвозвратно">Удалить</button>
-                    <hr />
-                </div>
-
-                <div class="toDo" tabindex="1" data-tooltip="Дополнительная информация">
-                    <input type="checkbox" class="toDoCheckbox" />
-                    <span class="toDoSpan">Текст заметки</span>
-                    <button class="toDoButton" data-tooltip="Внести изменения">Редактировать</button>
-                    <button class="toDoButton" data-tooltip="Удалить безвозвратно">Удалить</button>
                 </div>
             </div>
         </div>
